@@ -1,0 +1,572 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.Form..Create(BaseForm)
+Gui.Form..Caption("Positive Pay Export - City National - 6513")
+Gui.Form..Size(15360,10800)
+Gui.Form..MinX(0)
+Gui.Form..MinY(0)
+Gui.Form..Position(0,0)
+Gui.Form..AlwaysOnTop(False)
+Gui.Form..FontName("Tahoma")
+Gui.Form..FontSize(8.25)
+Gui.Form..ControlBox(True)
+Gui.Form..MaxButton(True)
+Gui.Form..MinButton(True)
+Gui.Form..MousePointer(0)
+Gui.Form..Moveable(True)
+Gui.Form..Sizeable(True)
+Gui.Form..ShowInTaskBar(True)
+Gui.Form..TitleBar(True)
+Gui.Form..Event(UnLoad,Form_UnLoad)
+Gui.Form.SplitContainer1.Create(SplitContainer)
+Gui.Form.SplitContainer1.Enabled(True)
+Gui.Form.SplitContainer1.Visible(True)
+Gui.Form.SplitContainer1.Zorder(0)
+Gui.Form.SplitContainer1.Size(15360,10350)
+Gui.Form.SplitContainer1.Position(0,0)
+Gui.Form.SplitContainer1.Orientation(1)
+Gui.Form.SplitContainer1.SplitterPosition(2550)
+Gui.Form.SplitContainer1.Collapsed(False)
+Gui.Form.SplitContainer1.Dock(5)
+Gui.Form.SplitContainer1.FlowBreak(True)
+Gui.Form.SplitContainer1.CollapsiblePanel(0)
+Gui.Form.gsChecks.Create(GsGridControl)
+Gui.Form.gsChecks.Enabled(True)
+Gui.Form.gsChecks.Visible(True)
+Gui.Form.gsChecks.Zorder(0)
+Gui.Form.gsChecks.Size(15180,6750)
+Gui.Form.gsChecks.Position(90,420)
+Gui.Form.gsChecks.Anchor(15)
+Gui.Form.gsChecks.Parent("SplitContainer1",1)
+Gui.Form.txtExportFolder.Create(TextBox,"",True,12765,300,0,75,7275,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtExportFolder.Anchor(14)
+Gui.Form.txtExportFolder.Parent("SplitContainer1",1)
+Gui.Form.cmdBrowseFolder.Create(Button)
+Gui.Form.cmdBrowseFolder.Enabled(True)
+Gui.Form.cmdBrowseFolder.Visible(True)
+Gui.Form.cmdBrowseFolder.Zorder(0)
+Gui.Form.cmdBrowseFolder.Size(840,345)
+Gui.Form.cmdBrowseFolder.Position(12930,7230)
+Gui.Form.cmdBrowseFolder.Caption("^")
+Gui.Form.cmdBrowseFolder.FontName("Tahoma")
+Gui.Form.cmdBrowseFolder.FontSize(8.25)
+Gui.Form.cmdBrowseFolder.Anchor(10)
+Gui.Form.cmdBrowseFolder.Event(Click,cmdBrowseFolder_Click)
+Gui.Form.cmdBrowseFolder.Parent("SplitContainer1",1)
+Gui.Form.cmdExport.Create(Button)
+Gui.Form.cmdExport.Enabled(True)
+Gui.Form.cmdExport.Visible(True)
+Gui.Form.cmdExport.Zorder(0)
+Gui.Form.cmdExport.Size(1425,345)
+Gui.Form.cmdExport.Position(13860,7230)
+Gui.Form.cmdExport.Caption("Export")
+Gui.Form.cmdExport.FontName("Tahoma")
+Gui.Form.cmdExport.FontSize(8.25)
+Gui.Form.cmdExport.Anchor(10)
+Gui.Form.cmdExport.Parent("SplitContainer1",1)
+Gui.Form.cmdExport.Event(Click,cmdExport_Click)
+Gui.Form.cmdLoad.Create(Button)
+Gui.Form.cmdLoad.Enabled(True)
+Gui.Form.cmdLoad.Visible(True)
+Gui.Form.cmdLoad.Zorder(0)
+Gui.Form.cmdLoad.Size(1125,345)
+Gui.Form.cmdLoad.Position(105,0)
+Gui.Form.cmdLoad.Caption("Load")
+Gui.Form.cmdLoad.FontName("Tahoma")
+Gui.Form.cmdLoad.FontSize(8.25)
+Gui.Form.cmdLoad.Parent("SplitContainer1",1)
+Gui.Form.cmdLoad.Event(Click,cmdLoad_Click)
+Gui.Form.lbl1.Create(Label,"Start",True,360,195,0,135,135,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl1.BorderStyle(0)
+Gui.Form.lbl1.Parent("SplitContainer1",0)
+Gui.Form.lbl2.Create(Label,"End",True,270,195,0,2205,135,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl2.BorderStyle(0)
+Gui.Form.lbl2.Parent("SplitContainer1",0)
+Gui.Form.dtpStart.Create(DatePicker)
+Gui.Form.dtpStart.Enabled(True)
+Gui.Form.dtpStart.Visible(True)
+Gui.Form.dtpStart.Zorder(0)
+Gui.Form.dtpStart.Size(1980,300)
+Gui.Form.dtpStart.Position(105,390)
+Gui.Form.dtpStart.CheckBox(False)
+Gui.Form.dtpStart.FontName("Tahoma")
+Gui.Form.dtpStart.FontSize(8.25)
+Gui.Form.dtpStart.Parent("SplitContainer1",0)
+Gui.Form.dtpEnd.Create(DatePicker)
+Gui.Form.dtpEnd.Enabled(True)
+Gui.Form.dtpEnd.Visible(True)
+Gui.Form.dtpEnd.Zorder(0)
+Gui.Form.dtpEnd.Size(1785,300)
+Gui.Form.dtpEnd.Position(2205,390)
+Gui.Form.dtpEnd.CheckBox(False)
+Gui.Form.dtpEnd.FontName("Tahoma")
+Gui.Form.dtpEnd.FontSize(8.25)
+Gui.Form.dtpEnd.Parent("SplitContainer1",0)
+Gui.Form.cmdAdd.Create(Button)
+Gui.Form.cmdAdd.Enabled(True)
+Gui.Form.cmdAdd.Visible(True)
+Gui.Form.cmdAdd.Zorder(0)
+Gui.Form.cmdAdd.Size(1125,345)
+Gui.Form.cmdAdd.Position(4110,375)
+Gui.Form.cmdAdd.Caption("Add")
+Gui.Form.cmdAdd.FontName("Tahoma")
+Gui.Form.cmdAdd.FontSize(8.25)
+Gui.Form.cmdAdd.Event(Click,cmdAdd_Click)
+Gui.Form.cmdAdd.Parent("SplitContainer1",0)
+Gui.Form.gsDate.Create(GsGridControl)
+Gui.Form.gsDate.Enabled(True)
+Gui.Form.gsDate.Visible(True)
+Gui.Form.gsDate.Zorder(0)
+Gui.Form.gsDate.Size(5145,1650)
+Gui.Form.gsDate.Position(135,840)
+Gui.Form.gsDate.Event(RowCellClick,gsDate_RowCellClick)
+Gui.Form.gsDate.Parent("SplitContainer1",0)
+Gui.Form.gsDate.Anchor(7)
+Gui.Form.lblAccount.Create(Label,"Account",False,585,195,0,5325,150,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lblAccount.BorderStyle(0)
+Gui.Form.lblAccount.Parent("SplitContainer1",0)
+Gui.Form.txtAccount.Create(TextBox,"",False,3015,300,0,5325,405,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtAccount.Parent("SplitContainer1",0)
+Gui.Form.cmdSaveAccount.Create(Button)
+Gui.Form.cmdSaveAccount.Enabled(True)
+Gui.Form.cmdSaveAccount.Visible(False)
+Gui.Form.cmdSaveAccount.Zorder(0)
+Gui.Form.cmdSaveAccount.Size(1125,345)
+Gui.Form.cmdSaveAccount.Position(8430,390)
+Gui.Form.cmdSaveAccount.Caption("Save")
+Gui.Form.cmdSaveAccount.FontName("Tahoma")
+Gui.Form.cmdSaveAccount.FontSize(8.25)
+Gui.Form.cmdSaveAccount.Event(Click,cmdSaveAccount_Click)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+v.Global.sDateClause.Declare
+v.Global.sSQL.Declare
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'BN, Oct 18 2021
+'GAB script will generate a comma delaminated CSV file with the following information:
+'Account number (City National Account Number), Check Number, Check Amount, Check Date (Issue Date), Customer ID (Payee Name - use long name from vendor master file), Record Indicator
+
+'1)This GAB script needs to run after an AP Batch is completed and the file will only include info for that specific batch.
+'just before the AP Check Register Report 000310 is printed, the check list will be exported to the default folder: Global\Custom\6513\CCC where CCC is the company code. A message box will be displayed that the exported is done. Click OK. The program will go ahead and print the AP Check Register Report.
+
+'2)Create a custom menu item (menu item must be flag as M) where the end user can select a Check Date Range and a Customer Range and click run/okay - then the GAB script will run to create the file in the format needed by City National Bank.
+
+F.Intrinsic.Control.Try	
+	v.Local.dDate.Declare
+	v.Local.dEnd.Declare
+	v.Local.bEx.Declare
+	v.Local.sBatchNumber.Declare
+	v.Local.sRet.Declare
+	
+	'AP_CHECK_REG.RPT - Report ID 310
+	f.Intrinsic.Control.If(v.Caller.Hook,=,16090,and,v.Passed.009001,=,"000310")
+		f.Intrinsic.Control.CallSub(Initialize)
+		'Get check date	
+		f.Intrinsic.String.Build("select top 1 Batch  from BI_GLDTL where Trmnl = '{0}' and rptid = '000310' and rtrim(Batch) <> ''",v.Caller.Terminal,v.Global.sSQL)
+		f.ODBC.Connection!conx.OpenCompanyConnection
+		f.ODBC.Connection!conx.ExecuteAndReturn(v.Global.sSQL,v.Local.sRet)
+		f.ODBC.Connection!conx.Close	
+		f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF)
+			f.Intrinsic.UI.Msgbox("No Batch Found to export to csv.","Attention")
+			f.Intrinsic.Control.ExitSub
+		f.Intrinsic.Control.EndIf
+		v.Local.sBatchNumber.Set(v.Local.sRet.Trim)
+		f.Intrinsic.String.Build("Where rtrim(Batch_Number) = '{0}' and rtrim(CK_No) in (Select rtrim(CK_Num) from BI_GLDTL where Trmnl = '{1}' and rptid = '000310' and rtrim(Batch) = '{0}' and RTrim(CK_Num) <> '' )",v.Local.sBatchNumber,v.Caller.Terminal,v.Global.sDateClause)
+		f.Intrinsic.Control.CallSub(Process)
+		f.Intrinsic.Control.CallSub(cmdExport_Click)
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+		
+	'Run from a menu item	
+	f.Intrinsic.Control.If(v.Caller.Switches,=,"M",and,v.Caller.Hook,>,1000000)	
+		f.Intrinsic.Control.CallSub(Initialize)
+		gui.Form..Show
+	f.Intrinsic.Control.EndIf	
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.Catching.Start
+f.Intrinsic.Control.Try
+	v.Local.sError.Declare
+	
+	F.Intrinsic.String.Build("Project: GCG_6513_CityNational.g2u {0}Subroutine: {1}{0}Error Occurred {2} with description {3}{0}GAB Version: {4}",V.Ambient.Newline,V.Args.Sub,V.Args.errorno,V.Args.errordesc,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	
+	f.Intrinsic.Control.CallSub(Unload)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.End
+f.Intrinsic.Control.EndTry
+Program.Sub.Catching.End
+
+Program.Sub.Unload.Start
+F.Intrinsic.Control.Try	
+	
+	F.Intrinsic.Control.End 
+	
+f.Intrinsic.Control.Catch
+	F.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry	
+Program.Sub.Unload.End
+
+Program.Sub.Initialize.Start
+f.Intrinsic.Control.Try
+	v.Local.bEx.Declare
+		
+	f.Global.Security.IsInGroup(v.Caller.User,"POS6513",V.Caller.CompanyCode,V.Local.bEx)
+	F.Intrinsic.Control.If(v.Local.bEx)
+		gui.Form.txtAccount.Visible(True)
+		gui.Form.cmdSaveAccount.Visible(True)
+		gui.Form.lblAccount.Visible(True)
+	f.Intrinsic.Control.Else	
+		gui.Form.txtAccount.Visible(False)
+		gui.Form.cmdSaveAccount.Visible(False)	
+		gui.Form.lblAccount.Visible(False)
+	F.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.CallSub(Check_Folder)
+	f.Intrinsic.Control.CallSub(Create_Table_Dictionary)	
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.Initialize.End
+
+Program.Sub.cmdLoad_Click.Start
+f.Intrinsic.Control.Try
+	v.Local.iCnt.Declare
+	v.Local.dStart.Declare
+	v.Local.dEnd.Declare
+
+	v.Global.sDateClause.Set("")
+	f.Intrinsic.Control.If(v.DataTable.dtDate.RowCount,=,0)
+		f.Intrinsic.UI.Msgbox("No Date Range selected","Invalid")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	
+	v.Local.dStart.Set(v.DataTable.dtDate(0).StartDate!FieldValString)
+	v.Local.dEnd.Set(v.DataTable.dtDate(0).EndDate!FieldValString)
+	f.Intrinsic.String.Build("Where (CK_DATE between '{0}' and '{1}')",v.Local.dStart.PervasiveDate,v.Local.dEnd.PervasiveDate,v.Global.sDateClause)
+	f.Intrinsic.Control.For(v.Local.iCnt,1,v.DataTable.dtDate.RowCount--,1)
+		v.Local.dStart.Set(v.DataTable.dtDate(v.Local.iCnt).StartDate!FieldValString)
+		v.Local.dEnd.Set(v.DataTable.dtDate(v.Local.iCnt).EndDate!FieldValString)	
+		f.Intrinsic.String.Build("{0} or (CK_DATE between '{1}' and '{2}')",v.Global.sDateClause,v.Local.dStart.PervasiveDate,v.Local.dEnd.PervasiveDate,v.Global.sDateClause)
+	f.Intrinsic.Control.Next(v.Local.iCnt)	
+	
+	F.Intrinsic.Control.CallSub(Process)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdLoad_Click.End
+
+Program.Sub.Process.Start
+F.Intrinsic.Control.Try	
+	
+	f.Intrinsic.String.Build("Select CK_Date, Ck_No, CK_Or_Void,rtrim(Vend_No) as Vend_No,rtrim(Payee) as Payee,Amount from v_Checks_Log {0} order by ck_Date,ck_no",v.Global.sDateClause,v.Global.sSQL)
+	f.Intrinsic.Control.If(v.DataTable.dtChecks.Exists)
+		f.Data.DataTable.Close("dtChecks")
+	f.Intrinsic.Control.EndIf
+	f.ODBC.Connection!conx.OpenCompanyConnection
+		f.Data.DataTable.CreateFromSQL("dtChecks","conx",v.Global.sSQL,True)
+	f.ODBC.Connection!conx.Close
+
+	gui.Form.gsChecks.AddGridviewFromDatatable("gvChecks","dtChecks")
+	f.Intrinsic.Control.CallSub(Format_gvChecks)
+	gui.Form.gsChecks.MainView("gvChecks")
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.Process.End
+
+Program.Sub.Format_gvChecks.Start
+f.Intrinsic.Control.Try
+	v.Local.sProp.Declare
+	v.Local.sValue.Declare
+		
+	gui.Form.gsChecks.SuspendLayout	
+	
+	Gui.Form.gsChecks.SetGridViewProperty("gvChecks","AllowSort",True)
+	Gui.Form.gsChecks.SetGridViewProperty("gvChecks","AllowFilter",True)
+	Gui.Form.gsChecks.SetGridViewProperty("gvChecks","OptionsViewShowGroupPanel",True)
+	Gui.Form.gsChecks.SetGridViewProperty("gvChecks","AllowColumnResizing",True)
+	Gui.Form.gsChecks.SetGridViewProperty("gvChecks","OptionsViewColumnAutoWidth",False)
+	Gui.Form.gsChecks.SetGridViewProperty("gvChecks","OptionsViewShowAutoFilterRow",True)
+	Gui.Form.gsChecks.SetGridViewProperty("gvChecks","OptionsFindAlwaysVisible",True)
+	Gui.Form.gsChecks.SetGridViewProperty("gvChecks",v.Enum.GridViewPropertyNames!SuppressNothingDates, True)	
+	
+	gui.Form.gsChecks.SetColumnProperty("gvChecks","CK_Date","DisplayCustomDateTime","d")
+	v.Local.sProp.Set("HeaderFontBold")
+	v.Local.sValue.Set("True")
+	gui.Form.gsChecks.SetColumnProperty("gvChecks","Ck_Date",v.Local.sProp,v.Local.sValue)
+	gui.Form.gsChecks.SetColumnProperty("gvChecks","Ck_No",v.Local.sProp,v.Local.sValue)
+	gui.Form.gsChecks.SetColumnProperty("gvChecks","CK_Or_Void",v.Local.sProp,v.Local.sValue)
+	gui.Form.gsChecks.SetColumnProperty("gvChecks","Vend_No",v.Local.sProp,v.Local.sValue)
+	gui.Form.gsChecks.SetColumnProperty("gvChecks","Payee",v.Local.sProp,v.Local.sValue)
+	gui.Form.gsChecks.SetColumnProperty("gvChecks","Amount",v.Local.sProp,v.Local.sValue)
+	v.Local.sProp.Set("Caption")
+	gui.Form.gsChecks.SetColumnProperty("gvChecks","Ck_Date",v.Local.sProp,"Check Date")
+	gui.Form.gsChecks.SetColumnProperty("gvChecks","Ck_No",v.Local.sProp,"Check No")
+	gui.Form.gsChecks.SetColumnProperty("gvChecks","CK_Or_Void",v.Local.sProp,"Ck or Void")
+	gui.Form.gsChecks.SetColumnProperty("gvChecks","Vend_No",v.Local.sProp,"Vendor")
+	gui.Form.gsChecks.SetColumnProperty("gvChecks","Payee",v.Local.sProp,"Name")
+	gui.Form.gsChecks.SetColumnProperty("gvChecks","Amount",v.Local.sProp,"Amount")	
+	v.Local.sProp.Set("Width")
+	gui.Form.gsChecks.SetColumnProperty("gvChecks","Ck_Date",v.Local.sProp,"100")
+	gui.Form.gsChecks.SetColumnProperty("gvChecks","Ck_No",v.Local.sProp,"100")
+	gui.Form.gsChecks.SetColumnProperty("gvChecks","CK_Or_Void",v.Local.sProp,"100")
+	gui.Form.gsChecks.SetColumnProperty("gvChecks","Vend_No",v.Local.sProp,"100")
+	gui.Form.gsChecks.SetColumnProperty("gvChecks","Payee",v.Local.sProp,"300")
+	gui.Form.gsChecks.SetColumnProperty("gvChecks","Amount",v.Local.sProp,"100")
+	v.Local.sProp.Set("HeaderHAlignment")
+	v.Local.sValue.Set("True")
+	gui.Form.gsChecks.SetColumnProperty("gvChecks","Ck_Date",v.Local.sProp,v.Local.sValue)
+	gui.Form.gsChecks.SetColumnProperty("gvChecks","Ck_No",v.Local.sProp,v.Local.sValue)
+	gui.Form.gsChecks.SetColumnProperty("gvChecks","CK_Or_Void",v.Local.sProp,v.Local.sValue)
+	gui.Form.gsChecks.SetColumnProperty("gvChecks","Vend_No",v.Local.sProp,v.Local.sValue)
+	v.Local.sProp.Set("CellHAlignment")
+	v.Local.sValue.Set("True")
+	gui.Form.gsChecks.SetColumnProperty("gvChecks","Ck_Date",v.Local.sProp,v.Local.sValue)
+	gui.Form.gsChecks.SetColumnProperty("gvChecks","Ck_No",v.Local.sProp,v.Local.sValue)
+	gui.Form.gsChecks.SetColumnProperty("gvChecks","CK_Or_Void",v.Local.sProp,v.Local.sValue)
+	gui.Form.gsChecks.SetColumnProperty("gvChecks","Vend_No",v.Local.sProp,v.Local.sValue)	
+	
+	gui.Form.gsChecks.AddSummaryItem("gvChecks","Amount","amt","Sum","Total: $","","n2")
+	
+	gui.Form.gsChecks.ResumeLayout
+
+Program.Sub.Format_gvChecks.End
+
+Program.Sub.Form_UnLoad.Start
+f.Intrinsic.Control.CallSub(Unload)
+Program.Sub.Form_UnLoad.End
+
+Program.Sub.cmdBrowseFolder_Click.Start
+f.Intrinsic.Control.Try
+	v.Local.sPath.Declare
+	
+	F.Intrinsic.UI.FolderBrowser("Select Folder for Path",V.Local.sPath)
+	f.Intrinsic.Control.If(v.Local.sPath.IsCancel,=,False)
+		gui.Form.txtExportFolder.Text(v.Local.sPath)
+	f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdBrowseFolder_Click.End
+
+Program.Sub.Check_Folder.Start
+f.Intrinsic.Control.Try
+	v.Local.bExist.Declare
+	v.Local.sDefaultFolder.Declare
+	'Check default folder
+	f.Intrinsic.String.Build("{0}\Custom",v.Caller.GlobalDir,v.Local.sDefaultfolder)
+	f.Intrinsic.File.DirExists(v.Local.sDefaultfolder,v.Local.bExist)
+	f.Intrinsic.Control.If(v.Local.bExist.Not)
+		f.Intrinsic.File.CreateDir(v.Local.sDefaultfolder)
+	f.Intrinsic.Control.EndIf	
+	
+	f.Intrinsic.String.Build("{0}\Custom\6513",v.Caller.GlobalDir,v.Local.sDefaultfolder)
+	f.Intrinsic.File.DirExists(v.Local.sDefaultfolder,v.Local.bExist)
+	f.Intrinsic.Control.If(v.Local.bExist.Not)
+		f.Intrinsic.File.CreateDir(v.Local.sDefaultfolder)
+	f.Intrinsic.Control.EndIf	
+	
+	'Default Positive Pay folder that store the csv output file.
+	f.Intrinsic.String.Build("{0}\Custom\6513\{1}",v.Caller.GlobalDir,v.Caller.CompanyCode,v.Local.sDefaultfolder)
+	f.Intrinsic.File.DirExists(v.Local.sDefaultfolder,v.Local.bExist)
+	f.Intrinsic.Control.If(v.Local.bExist.Not)
+		f.Intrinsic.File.CreateDir(v.Local.sDefaultfolder)
+	f.Intrinsic.Control.EndIf	
+	gui.Form.txtExportFolder.Text(v.Local.sDefaultFolder)	
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.Check_Folder.End
+
+Program.Sub.Create_Table_Dictionary.Start
+f.Intrinsic.Control.Try
+	v.Local.bEx.Declare
+	v.Local.sHold.Declare
+
+	f.Intrinsic.Control.If(v.DataTable.dtDate.Exists)
+		f.Data.DataTable.Close("dtDate")
+	f.Intrinsic.Control.EndIf
+	f.Data.DataTable.Create("dtDate",True)
+	f.Data.DataTable.AddColumn("dtDate","StartDate","Date","01/01/1900")
+	f.Data.DataTable.AddColumn("dtDate","EndDate","Date","01/01/1900")
+	f.Data.DataTable.AddColumn("dtDate","Delete","String","Delete")
+	f.Intrinsic.Control.CallSub(Format_gvDate)	
+	
+	f.Data.Dictionary.Exists("dictVendor",v.Local.bEx)
+	f.Intrinsic.Control.If(v.Local.bEx)
+		f.Data.Dictionary.Close("dictVendor")
+	f.Intrinsic.Control.EndIf
+	f.ODBC.Connection!conx.OpenCompanyConnection
+	f.Data.Dictionary.CreateFromSQL("dictVendor","conx","Select rtrim(Vendor),rtrim(Name_Vendor) from v_Vendor_Master")
+	f.Data.Dictionary.SetDefaultReturn("dictVendor","")
+	f.ODBC.Connection!conx.Close
+	
+	'F.Global.Registry.AddValue("SUPERVSR",V.Caller.CompanyCode,"POSPAY",6513,1001,False,"ACCT",False,0,-999.0,1/1/1980,12:00:00 AM,v.Screen.Form!txtAccount.Text.Trim)
+	
+	F.Global.Registry.ReadValue("SUPERVSR",V.Caller.CompanyCode,"POSPAY",6513,1001,6,"",V.Local.sHold)
+	gui.Form.txtAccount.Text(v.Local.sHold)		
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.Create_Table_Dictionary.End
+
+Program.Sub.cmdAdd_Click.Start
+f.Intrinsic.Control.Try
+	v.Local.dStart.Declare
+	v.Local.dEnd.Declare
+	
+	v.Local.dStart.Set(v.Screen.Form!dtpStart.Value)
+	v.Local.dEnd.Set(v.Screen.Form!dtpEnd.Value)
+	f.Intrinsic.Control.If(v.Local.dStart,>,v.Local.dEnd)
+		f.Intrinsic.UI.Msgbox("Invalid Date Range","Invalid")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	
+	f.Data.DataTable.AddRow("dtDate","StartDate",v.Local.dStart,"EndDate",v.Local.dEnd)	
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdAdd_Click.End
+
+Program.Sub.gsDate_RowCellClick.Start
+f.Intrinsic.Control.Try
+
+	f.Intrinsic.Control.If(v.Args.Column,=,"Delete")
+		f.Data.DataTable.DeleteRow("dtDate",v.Args.RowIndex)
+		f.Data.DataTable.AcceptChanges("dtDate")
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.gsDate_RowCellClick.End
+
+Program.Sub.cmdExport_Click.Start
+f.Intrinsic.Control.Try
+	v.Local.iCnt.Declare
+	v.Local.sFile.Declare
+	v.Local.sLine.Declare
+	v.Local.sContent.Declare
+	v.Local.sAccount.Declare
+	v.Local.sCheck.Declare
+	v.Local.sAmount.Declare
+	v.Local.sDate.Declare
+	v.Local.dDate.Declare
+	v.Local.sPayeeName.Declare
+	v.Local.sHold.Declare
+	v.Local.sIndicator.Declare
+	v.Local.sVendor.Declare
+	v.Local.bEx.Declare
+	v.Local.sMonth.Declare
+	v.Local.sYear.Declare
+	v.Local.sDay.Declare
+	
+	f.Intrinsic.Control.If(v.Screen.Form!txtAccount.Text.Trim,=,"")
+		f.Intrinsic.UI.Msgbox("Account is empty.","Invalid")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	v.Local.sAccount.Set(v.Screen.Form!txtAccount.Text.Trim)
+	
+	f.Intrinsic.StringBuilder.Create("Exp")
+	f.Intrinsic.Control.For(v.Local.iCnt,0,v.DataTable.dtChecks.RowCount--,1)	
+		v.Local.sCheck.Set(v.DataTable.dtChecks(v.Local.iCnt).Ck_No!FieldValTrim)
+		v.Local.sAmount.Set(v.DataTable.dtChecks(v.Local.iCnt).Amount!FieldValString)
+		v.Local.dDate.Set(v.DataTable.dtChecks(v.Local.iCnt).CK_Date!FieldValString)
+		v.Local.sDate.Set(v.Local.dDate.FormatYYYYMMDD)
+		v.Local.sDay.Set(v.Local.sDate.Right2)
+		f.Intrinsic.String.Mid(v.Local.sDate,3,2,v.Local.sYear)
+		f.Intrinsic.String.Mid(v.Local.sDate,5,2,v.Local.sMonth)
+		f.Intrinsic.String.Build("{0}/{1}/{2}",v.Local.sMonth,v.Local.sDay,v.Local.sYear,v.Local.sDate)
+		
+		v.Local.sVendor.Set(v.DataTable.dtChecks(v.Local.iCnt).Vend_no!FieldValTrim)
+		'Payee
+		v.Local.sHold.Set(v.Dictionary.dictVendor![v.Local.sVendor])
+		f.Intrinsic.Control.If(v.Local.sHold,<>,"")
+			v.Local.sPayeeName.Set(v.Local.sHold)
+		f.Intrinsic.Control.Else
+			v.Local.sPayeeName.Set(v.DataTable.dtChecks(v.Local.iCnt).Payee!FieldValTrim)
+		f.Intrinsic.Control.EndIf
+		f.Intrinsic.String.IsInString(v.Local.sPayeeName,",",True,v.Local.bEx)
+		f.Intrinsic.Control.If(v.Local.bEx)
+			f.Intrinsic.String.Build("{0}{1}{2}",v.Ambient.DblQuote,v.Local.sPayeeName,v.Ambient.DblQuote,v.Local.sPayeeName)
+		f.Intrinsic.Control.EndIf
+		
+		f.Intrinsic.Control.If(v.DataTable.dtChecks(v.Local.iCnt).CK_Or_Void!FieldValTrim,=,"C")
+			v.Local.sIndicator.Set("I")
+		f.Intrinsic.Control.Else
+			v.Local.sIndicator.Set("V")
+		f.Intrinsic.Control.EndIf
+		
+		f.Intrinsic.String.Build("{0},{1},{2},{3},{4},{5}",v.Local.sAccount,v.Local.sCheck,v.Local.sAmount,v.Local.sDate,v.Local.sPayeeName,v.Local.sIndicator,v.Local.sLine)
+		f.Intrinsic.StringBuilder.AppendLine("Exp",v.Local.sLine)
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+	
+	f.Intrinsic.StringBuilder.ToString("Exp",v.Local.sContent)
+	f.Intrinsic.StringBuilder.Dispose("Exp")
+	
+	f.Intrinsic.String.Build("{0}\{1}_{2}.csv",v.Screen.Form!txtExportFolder.Text,v.Ambient.Now.FormatYYYYMMDD,v.Ambient.Now.FormatHHNNSS,v.Local.sFile)
+	f.Intrinsic.File.String2File(v.Local.sFile,v.Local.sContent)
+	f.Intrinsic.File.Exists(v.Local.sFile,v.Local.bEx)
+	f.Intrinsic.Control.If(v.Local.bEx)
+		F.Intrinsic.Task.ShellExec(0,"",V.Local.sFile,"","",1)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.UI.Msgbox("File does not exist.","Error")
+	f.Intrinsic.Control.EndIf
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdExport_Click.End
+
+Program.Sub.cmdSaveAccount_Click.Start
+f.Intrinsic.Control.Try
+	
+	F.Global.Registry.AddValue("SUPERVSR",V.Caller.CompanyCode,"POSPAY",6513,1001,False,"ACCT",False,0,-999.0,1/1/1980,12:00:00 AM,v.Screen.Form!txtAccount.Text.Trim)
+	f.Intrinsic.UI.Msgbox("Account Saved.")
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdSaveAccount_Click.End
+
+Program.Sub.Format_gvDate.Start
+	gui.Form.gsDate.AddGridviewFromDatatable("gvDate","dtDate")
+	
+	gui.Form.gsDate.SuspendLayout
+	Gui.Form.gsDate.SetGridViewProperty("gvDate","AllowSort",True)
+	Gui.Form.gsDate.SetGridViewProperty("gvDate","OptionsViewShowGroupPanel",False)
+	Gui.Form.gsDate.SetGridViewProperty("gvDate","AllowColumnResizing",True)
+	Gui.Form.gsDate.SetGridViewProperty("gvDate","OptionsViewColumnAutoWidth",False)
+	Gui.Form.gsDate.SetGridViewProperty("gvDate",v.Enum.GridViewPropertyNames!SuppressNothingDates, True)	
+	
+	gui.Form.gsDate.SetColumnProperty("gvDate","StartDate","Width","100")
+	gui.Form.gsDate.SetColumnProperty("gvDate","EndDate","Width","100")
+	gui.Form.gsDate.SetColumnProperty("gvDate","Delete","HeaderHAlignment","Center")
+	gui.Form.gsDate.SetColumnProperty("gvDate","Delete","CellHAlignment","Center")
+	gui.Form.gsDate.SetColumnProperty("gvDate","Delete","AllowEdit",False)
+	gui.Form.gsDate.SetColumnProperty("gvDate","Delete","ReadOnly",True)
+	
+	gui.Form.gsDate.SetColumnProperty("gvDate","StartDate","DisplayCustomDateTime","d")
+	gui.Form.gsDate.SetColumnProperty("gvDate","EndDate","DisplayCustomDateTime","d")
+	gui.Form.gsDate.ResumeLayout
+	
+	gui.Form.gsDate.MainView("gvDate")
+Program.Sub.Format_gvDate.End
+
+Program.Sub.Comments.Start
+${$5$}$3.0.0.0$}$1
+${$6$}$bnguyen$}$20211028124738042$}$tqzwddZCkmoVRWHEL6DZymEEseDhOdziH08jK2/kKBa+fPhTP5uMuJpnd+c8NuCW/9zN9DuvWOg=
+Program.Sub.Comments.End
